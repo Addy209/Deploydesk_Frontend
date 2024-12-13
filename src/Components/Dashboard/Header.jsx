@@ -4,13 +4,15 @@ import { IoMdNotifications } from "react-icons/io";
 import { FaSearch } from "react-icons/fa";
 import { center } from "../../utils/utils";
 import "./dashboard.css";
+import { NavLink } from "react-router";
+import Navigation from "./Navigation";
 
 const Header = () => {
   return (
     <Box
       sx={{
         width: "100%",
-        height: "8%",
+        height: "6%",
         background: "rgba(13, 110, 253,0.5)",
         display: "flex",
         justifyContent: "space-between",
@@ -19,7 +21,7 @@ const Header = () => {
       }}
     >
       <Box sx={{ paddingLeft: "2vw" }}>
-        <Typography level="h3" sx={{ color: "gold" }}>
+        <Typography level="h3" sx={{ color: "gold" }} fontWeight={"bold"}>
           Deploy_Desk
         </Typography>
       </Box>
@@ -34,6 +36,7 @@ const Header = () => {
         <Box sx={{ marginRight: "2vw" }}>
           <Input
             type="search"
+            size="sm"
             sx={{
               width: "15ch",
               "&.Mui-focused": {
@@ -56,10 +59,10 @@ const Header = () => {
           sx={{ marginRight: "2vw", cursor: "pointer" }}
           className="notification"
         >
-          <IoMdNotifications size={"2rem"} color="gold" />
+          <IoMdNotifications size={"1.5rem"} color="gold" />
         </Box>
         <Box>
-          <Avatar>AK</Avatar>
+          <Avatar size="sm">AK</Avatar>
         </Box>
       </Box>
     </Box>

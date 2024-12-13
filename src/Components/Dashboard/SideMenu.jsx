@@ -3,7 +3,7 @@ import { Box, Typography } from "@mui/joy";
 import { center, glass, makerMenu } from "../../utils/utils";
 
 const style = {
-  padding: "0.5vh 0",
+  padding: "0.5vh 0.1vw",
   "&:hover": { scale: "1.1" },
   transition: "ease-in-out 0.2s",
   cursor: "pointer",
@@ -14,11 +14,12 @@ const SideMenu = () => {
   return (
     <Box
       sx={{
-        maxWidth: "15%",
+        maxWidth: "12%",
         ...center,
         justifyContent: "flex-start",
         ...glass,
         height: "85dvh",
+        margin: "0 1vw",
       }}
     >
       <Box sx={{ padding: "2.5vh 0" }}>
