@@ -1,4 +1,14 @@
-import { Avatar, Box, Divider, Grid, Input, Typography } from "@mui/joy";
+import {
+  Avatar,
+  Box,
+  ButtonGroup,
+  Divider,
+  Grid,
+  IconButton,
+  Input,
+  Tooltip,
+  Typography,
+} from "@mui/joy";
 import React from "react";
 import { styled } from "@mui/joy/styles";
 import Sheet from "@mui/joy/Sheet";
@@ -7,6 +17,8 @@ import Header from "../../Components/Dashboard/Header";
 import SideMenu from "../../Components/Dashboard/SideMenu";
 import "../../Components/Dashboard/dashboard.css";
 import TicketList from "../../Components/Dashboard/TicketList";
+import { MdEdit, MdDelete } from "react-icons/md";
+import TicketDetails from "../../Components/Dashboard/TicketDetails/TicketDetails";
 
 const Dashboard = () => {
   return (
@@ -16,7 +28,7 @@ const Dashboard = () => {
         flexDirection: "column",
         justifyContent: "flex-start",
         alignItems: "flex-start",
-        background: "url('./bg.jpg')",
+        background: "url('./ocean.jpg')",
         backgroundPosition: "center",
         backgroundSize: "cover",
         backgroundColor: "rgba(0,0,0,0.1)",
@@ -37,19 +49,7 @@ const Dashboard = () => {
       >
         <SideMenu />
         <TicketList />
-        <Divider orientation="vertical" />
-        <Box sx={{ width: "60%", margin: "0 1vw" }}>
-          <Box
-            sx={{
-              ...center,
-              width: "100%",
-              height: "100%",
-              background: "rgb(211,211,211)",
-            }}
-          >
-            Test
-          </Box>
-        </Box>
+        <TicketDetails />
       </Box>
     </Box>
   );

@@ -14,6 +14,7 @@ import Dashboard from "./pages/dashboard";
 import Header from "./Components/Dashboard/Header";
 import { Box } from "@mui/joy";
 import Navigation from "./Components/Dashboard/Navigation";
+import TicketList from "./Components/Dashboard/TicketList";
 
 function App() {
   return (
@@ -23,7 +24,7 @@ function App() {
         flexDirection: "column",
         justifyContent: "flex-start",
         alignItems: "flex-start",
-        background: "url('./bg.jpg')",
+        background: "url('./ocean.jpg')",
         backgroundPosition: "center",
         backgroundSize: "cover",
         backgroundColor: "rgba(0,0,0,0.1)",
