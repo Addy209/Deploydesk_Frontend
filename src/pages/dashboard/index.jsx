@@ -1,10 +1,24 @@
-import { Avatar, Box, Divider, Grid, Input, Typography } from "@mui/joy";
+import {
+  Avatar,
+  Box,
+  ButtonGroup,
+  Divider,
+  Grid,
+  IconButton,
+  Input,
+  Tooltip,
+  Typography,
+} from "@mui/joy";
 import React from "react";
 import { styled } from "@mui/joy/styles";
 import Sheet from "@mui/joy/Sheet";
 import { center, glass } from "../../utils/utils";
-import Header from "./Header";
-import SideMenu from "./SideMenu";
+import Header from "../../Components/Dashboard/Header";
+import SideMenu from "../../Components/Dashboard/SideMenu";
+import "../../Components/Dashboard/dashboard.css";
+import TicketList from "../../Components/Dashboard/TicketList";
+import { MdEdit, MdDelete } from "react-icons/md";
+import TicketDetails from "../../Components/Dashboard/TicketDetails/TicketDetails";
 
 const Dashboard = () => {
   return (
@@ -14,7 +28,7 @@ const Dashboard = () => {
         flexDirection: "column",
         justifyContent: "flex-start",
         alignItems: "flex-start",
-        background: "url('./bg.jpg')",
+        background: "url('./ocean.jpg')",
         backgroundPosition: "center",
         backgroundSize: "cover",
         backgroundColor: "rgba(0,0,0,0.1)",
@@ -23,23 +37,19 @@ const Dashboard = () => {
         height: "100dvh",
       }}
     >
-      <Header />
       <Box
         sx={{
           display: "flex",
           flexDirection: "row",
           justifyContent: "flex-start",
           alignItems: "center",
-          width: "99%",
+          width: "100%",
           height: "100%",
-          paddingLeft: "1%",
         }}
       >
         <SideMenu />
-        <Divider orientation="vertical" />
-        <Box sx={{ width: "30%" }}>2</Box>
-        <Divider orientation="vertical" />
-        <Box sx={{ width: "55%" }}>3</Box>
+        <TicketList />
+        <TicketDetails />
       </Box>
     </Box>
   );

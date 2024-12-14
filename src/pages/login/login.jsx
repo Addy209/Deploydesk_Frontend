@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Box, Button, Divider, Input, Link, Typography } from "@mui/joy";
 import { IoLogInSharp } from "react-icons/io5";
+import { glass } from "../../utils/utils";
 
 const Login = () => {
   return (
@@ -11,11 +12,6 @@ const Login = () => {
           height: "100vh",
           margin: 0,
           padding: 0,
-          backgroundPosition: "center",
-          backgroundSize: "cover",
-          backgroundColor: "rgba(0,0,0,0.2)",
-          backgroundBlendMode: "multiply",
-          backgroundImage: `url("./bg.jpg")`,
           display: "flex",
           justifyContent: "center",
           alignItems: "center",
@@ -24,14 +20,11 @@ const Login = () => {
       >
         <Box
           sx={{
-            background: "rgba(255,255,255,0.2)",
-            borderRadius: "16px",
+            ...glass,
+            borderRadius: "20px",
             height: "30rem",
             width: "24rem",
             placeSelf: "center",
-            backdropFilter: "blur(3px)",
-            border: "1px solid rgba(255,255,255,0.5)",
-            boxShadow: "0 4px 30px rgba(0, 0, 0, 0.5)",
             display: "flex",
             flexDirection: "column",
             justifyContent: "center",
