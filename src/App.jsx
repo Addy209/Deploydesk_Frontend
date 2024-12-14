@@ -14,7 +14,6 @@ import Dashboard from "./pages/dashboard";
 import Header from "./Components/Dashboard/Header";
 import { Box } from "@mui/joy";
 import Navigation from "./Components/Dashboard/Navigation";
-import TicketList from "./Components/Dashboard/TicketList";
 
 function App() {
   return (

@@ -1,34 +1,23 @@
-import {
-  Avatar,
-  Box,
-  ButtonGroup,
-  Divider,
-  Grid,
-  IconButton,
-  Input,
-  Tooltip,
-  Typography,
-} from "@mui/joy";
+import { Box, IconButton, Tooltip } from "@mui/joy";
 import React from "react";
 import { styled } from "@mui/joy/styles";
 import Sheet from "@mui/joy/Sheet";
 import { center, glass } from "../../../utils/utils";
-import { MdEdit, MdDelete } from "react-icons/md";
-
-const rowStyle = {
-  display: "flex",
-  flexDirection: "row",
-  height: "max-content",
-};
+import TicketHeading from "./TicketHeading";
+import APIDeploymentDetails from "./APIDeploymentDetails";
+import { FaPlus } from "react-icons/fa";
 
 const TicketDetails = () => {
   return (
     <Box
       sx={{
         width: "65%",
-        margin: "0 0.5vw 0 0.5vw",
+        margin: "0 0 0 0.5vw",
         height: "90dvh",
+        display: "flex",
+        flexDirection: "column",
       }}
+      className="ticketlist"
     >
       <Box
         sx={{
@@ -40,46 +29,36 @@ const TicketDetails = () => {
           backdropFilter: "blur(30px)",
         }}
       >
-        <Box
-          sx={{
-            ...rowStyle,
-            justifyContent: "space-between",
-            width: "100%",
-          }}
+        <TicketHeading />
+        <APIDeploymentDetails />
+      </Box>
+
+      <Box
+        sx={{
+          position: "fixed",
+          right: "1rem",
+          bottom: "1.5rem",
+        }}
+      >
+        <Tooltip
+          arrow
+          title="Create New Ticket"
+          color="neutral"
+          variant="soft"
+          placement="left"
         >
-          <Box sx={{ ...rowStyle, margin: "1rem 0 0 1rem", width: "80%" }}>
-            <Typography level="h4">
-              Ticket#T126057 - Request for deployment of thirdPartyWrapper
-              Service
-            </Typography>
-          </Box>
-          <Box sx={{ ...rowStyle, margin: "1rem 1rem 0 1rem" }}>
-            <ButtonGroup>
-              <Tooltip
-                arrow
-                color="primary"
-                size="lg"
-                variant="soft"
-                title="edit"
-              >
-                <IconButton color="primary" variant="solid">
-                  <MdEdit size={"1.5rem"} />
-                </IconButton>
-              </Tooltip>
-              <Tooltip
-                arrow
-                color="danger"
-                size="lg"
-                variant="soft"
-                title="delete"
-              >
-                <IconButton color="danger" variant="solid">
-                  <MdDelete size={"1.5rem"} />
-                </IconButton>
-              </Tooltip>
-            </ButtonGroup>
-          </Box>
-        </Box>
+          <IconButton
+            rotate={true}
+            sx={{
+              cursor: "pointer",
+              background: "gold",
+              padding: "1rem",
+              borderRadius: "2rem",
+            }}
+          >
+            <FaPlus size={20} />
+          </IconButton>
+        </Tooltip>
       </Box>
     </Box>
   );

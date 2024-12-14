@@ -24,3 +24,9 @@ export const makerMenu = [
   "Approved",
   "Advanced Search",
 ];
+
+export const rowStyle = {
+  display: "flex",
+  flexDirection: "row",
+  height: "max-content",
+};
