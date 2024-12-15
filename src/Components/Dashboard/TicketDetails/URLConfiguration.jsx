@@ -8,10 +8,8 @@ import {
 } from "@mui/joy";
 import React from "react";
 import { center, glass, rowStyle } from "../../../utils/utils";
-import APIDeploymentDetailsRow from "./APIDeploymentDetailsRow";
-import APIDeploymentDetailsAccordion from "./APIDeploymentDetailsAccordion";
 
-const APIDeploymentDetails = () => {
+const URLConfiguration = () => {
   return (
     <Box
       sx={{
@@ -27,10 +25,20 @@ const APIDeploymentDetails = () => {
         size="md"
         sx={{ ...glass, width: "98%", marginRight: "10vw" }}
       >
-        <APIDeploymentDetailsAccordion />
+        <Accordion>
+          <AccordionSummary>URL Configuration</AccordionSummary>
+          <AccordionDetails>
+            <Box className="ticketlist" sx={{ height: "20vh" }}>
+              <pre>
+                FilePath:router.xml
+                {"<test><value>M/value></test>"}
+              </pre>
+            </Box>
+          </AccordionDetails>
+        </Accordion>
       </AccordionGroup>
     </Box>
   );
 };
 
-export default APIDeploymentDetails;
+export default URLConfiguration;

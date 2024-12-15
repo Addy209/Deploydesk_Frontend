@@ -6,6 +6,8 @@ import { center, glass } from "../../../utils/utils";
 import TicketHeading from "./TicketHeading";
 import APIDeploymentDetails from "./APIDeploymentDetails";
 import { FaPlus } from "react-icons/fa";
+import CacheSQL from "./CacheSQL";
+import URLConfiguration from "./URLConfiguration";
 
 const TicketDetails = () => {
   return (
@@ -17,7 +19,6 @@ const TicketDetails = () => {
         display: "flex",
         flexDirection: "column",
       }}
-      className="ticketlist"
     >
       <Box
         sx={{
@@ -27,10 +28,14 @@ const TicketDetails = () => {
           background: "rgba(211,211,211,0.5)",
           justifyContent: "flex-start",
           backdropFilter: "blur(30px)",
+          borderRadius: "8px",
         }}
+        className="ticketlist"
       >
         <TicketHeading />
         <APIDeploymentDetails />
+        <CacheSQL />
+        <URLConfiguration />
       </Box>
 
       <Box
