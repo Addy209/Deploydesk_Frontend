@@ -7,7 +7,6 @@ import { FaPlus } from "react-icons/fa";
 import SideMenu from "../../Components/Dashboard/SideMenu";
 import "../../Components/Dashboard/dashboard.css";
 import TicketList from "../../Components/Dashboard/TicketList";
-import { Container, Button } from "react-floating-action-button";
 import TicketDetails from "../../Components/Dashboard/TicketDetails/TicketDetails";
 
 const Dashboard = () => {

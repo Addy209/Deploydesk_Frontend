@@ -27,7 +27,7 @@ const CacheSQL = () => {
       >
         <Accordion>
           <AccordionSummary>Cache SQL</AccordionSummary>
-          <AccordionDetails>
+          <AccordionDetails sx={{ backgroundColor: "rgb(235,235,235)" }}>
             <Box className="ticketlist" sx={{ height: "20vh" }}>
               <pre>
                 SELECT TOP 5 Id, Name FROM customerNames ORDER BY NEWID();

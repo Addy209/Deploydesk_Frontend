@@ -1,13 +1,6 @@
 import React, { useState } from "react";
 import "./App.css";
-import {
-  BrowserRouter as Router,
-  Routes,
-  Route,
-  NavLink,
-  useLocation,
-  useNavigate,
-} from "react-router";
+import { BrowserRouter as Router, Routes, Route } from "react-router";
 import Login from "./pages/Login/login";
 import Test from "./Components/Test";
 import Dashboard from "./pages/dashboard";

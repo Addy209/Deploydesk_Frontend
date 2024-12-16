@@ -24,7 +24,7 @@ const APIDeploymentDetailsRow = (props) => {
         &nbsp;
         <Typography
           level="body-sm"
-          sx={{ textWrap: "wrap", wordBreak: "break-word" }}
+          sx={{ textWrap: "wrap", wordBreak: "break-word", color: "black" }}
         >
           {props.desc1}
         </Typography>
@@ -32,7 +32,9 @@ const APIDeploymentDetailsRow = (props) => {
       {props.title2 && props.desc2 ? (
         <Box sx={{ ...rowStyle, width: "29%", marginLeft: "1%" }}>
           <Typography level="title-sm">{props.title2}:</Typography>&nbsp;
-          <Typography level="body-sm">{props.desc2}</Typography>
+          <Typography level="body-sm" sx={{ color: "black" }}>
+            {props.desc2}
+          </Typography>
         </Box>
       ) : (
         ""

@@ -41,6 +41,7 @@ const SideMenu = () => {
           ...glass,
           height: "97.5%",
           padding: "2.5vh 0",
+          backdropFilter: "blur(20px)",
         }}
       >
         <Box sx={{}}>

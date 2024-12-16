@@ -27,7 +27,7 @@ const URLConfiguration = () => {
       >
         <Accordion>
           <AccordionSummary>URL Configuration</AccordionSummary>
-          <AccordionDetails>
+          <AccordionDetails sx={{ backgroundColor: "rgb(235,235,235)" }}>
             <Box className="ticketlist" sx={{ height: "20vh" }}>
               <pre>
                 FilePath:router.xml

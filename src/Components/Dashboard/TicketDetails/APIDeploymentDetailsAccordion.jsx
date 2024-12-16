@@ -21,7 +21,7 @@ const APIDeploymentDetailsAccordion = () => {
             <AccordionSummary>
               {index + 1}. thirdPartyGenericService_expDS
             </AccordionSummary>
-            <AccordionDetails>
+            <AccordionDetails sx={{ backgroundColor: "rgb(235,235,235)" }}>
               <APIDeploymentDetailsRow
                 title1="URL"
                 desc1="https://eissiuat.sbi.co.in/gen5/gateway/misc/thirdPartyWrapper/services"
