@@ -2,8 +2,27 @@ import { useState } from "react";
 import { Box, Button, Divider, Input, Link, Typography } from "@mui/joy";
 import { IoLogInSharp } from "react-icons/io5";
 import { glass } from "../../utils/utils";
+import { useDispatch, useSelector } from "react-redux";
+import { LoginUser } from "../../redux/action";
+import { useNavigate } from "react-router";
 
 const Login = () => {
+  const dispatch = useDispatch();
+  const { user, error } = useSelector((state) => state.user);
+  const navigate = useNavigate();
+
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
+
+  const tryLogin = async () => {
+    dispatch(LoginUser(username, password));
+  };
+  if (user.token && user.email) {
+    navigate("/dashboard");
+  }
+  if (error) {
+    alert(error);
+  }
   return (
     <>
       <Box
@@ -56,6 +75,9 @@ const Login = () => {
               sx={{ width: "35ch" }}
               size="sm"
               placeholder="Enter Email..."
+              onChange={(e) => {
+                setUsername(e.target.value);
+              }}
             />
           </Box>
           <br />
@@ -68,6 +90,9 @@ const Login = () => {
               sx={{ width: "35ch" }}
               size="sm"
               placeholder="Enter Password..."
+              onChange={(e) => {
+                setPassword(e.target.value);
+              }}
             />
           </Box>
           <br />
@@ -82,7 +107,7 @@ const Login = () => {
           </Box>
           <br />
           <Box>
-            <Button>
+            <Button onClick={(e) => tryLogin(e)}>
               Login <IoLogInSharp />
             </Button>
           </Box>

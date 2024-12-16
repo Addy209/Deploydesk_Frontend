@@ -1,3 +1,6 @@
 export const FETCH_DATA = "FETCH_DATA";
 export const FETCH_DATA_SUCCESS = "FETCH_DATA_SUCCESS";
 export const FETCH_DATA_FAILURE = "FETCH_DATA_FAILURE";
+
+export const SAVE_USER = "SAVE_USER";
+export const SAVE_ERROR_USER = "SAVE_ERROR_USER";

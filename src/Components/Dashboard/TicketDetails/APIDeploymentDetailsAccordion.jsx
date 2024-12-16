@@ -4,24 +4,54 @@ import {
   AccordionGroup,
   AccordionSummary,
   Box,
+  ButtonGroup,
+  IconButton,
   Typography,
 } from "@mui/joy";
 import React from "react";
 import { center, glass, rowStyle } from "../../../utils/utils";
 import APIDeploymentDetailsRow from "./APIDeploymentDetailsRow";
+import { MdCheck, MdOutlineClose } from "react-icons/md";
 
 const dataList = [0, 0, 0, 0];
+const isApprover = true;
 
-const APIDeploymentDetailsAccordion = () => {
+const style = {
+  ...center,
+  justifyContent: "space-between",
+  flexDirection: "row",
+};
+
+export const APIDeploymentDetailsAccordion = () => {
   return (
     <>
       {dataList.map((val, index) => {
         return (
           <Accordion key={index}>
             <AccordionSummary>
-              {index + 1}. thirdPartyGenericService_expDS
+              <Box sx={{ ...style }}>
+                {index + 1}. thirdPartyGenericService_expDS{" "}
+                <Box
+                  onClick={(e) => {
+                    e.stopPropagation();
+                  }}
+                >
+                  {isApprover ? (
+                    <ButtonGroup>
+                      <IconButton color="success" variant="solid" size="sm">
+                        <MdCheck />
+                      </IconButton>
+                      <IconButton color="danger" variant="solid" size="sm">
+                        <MdOutlineClose />
+                      </IconButton>
+                    </ButtonGroup>
+                  ) : (
+                    ""
+                  )}
+                </Box>
+              </Box>
             </AccordionSummary>
-            <AccordionDetails sx={{ backgroundColor: "rgb(235,235,235)" }}>
+            <AccordionDetails sx={{ backgroundColor: "rgb(211,211,211)" }}>
               <APIDeploymentDetailsRow
                 title1="URL"
                 desc1="https://eissiuat.sbi.co.in/gen5/gateway/misc/thirdPartyWrapper/services"
@@ -48,4 +78,53 @@ const APIDeploymentDetailsAccordion = () => {
   );
 };
 
-export default APIDeploymentDetailsAccordion;
+export const CacheSQLandURLConfiguration = (props) => {
+  return (
+    <Box
+      sx={{
+        ...center,
+        justifyContent: "flex-start",
+        alignItems: "flex-start",
+        margin: "1rem 0 0 1vw",
+        width: "100%",
+      }}
+    >
+      <AccordionGroup
+        color="neutral"
+        size="md"
+        sx={{ ...glass, width: "98%", marginRight: "10vw" }}
+      >
+        <Accordion>
+          <AccordionSummary>
+            <Box sx={{ ...style }}>
+              {props.title}
+              <Box
+                onClick={(e) => {
+                  e.stopPropagation();
+                }}
+              >
+                {isApprover ? (
+                  <ButtonGroup>
+                    <IconButton color="success" variant="solid" size="sm">
+                      <MdCheck />
+                    </IconButton>
+                    <IconButton color="danger" variant="solid" size="sm">
+                      <MdOutlineClose />
+                    </IconButton>
+                  </ButtonGroup>
+                ) : (
+                  ""
+                )}
+              </Box>
+            </Box>
+          </AccordionSummary>
+          <AccordionDetails sx={{ backgroundColor: "rgb(211,211,211)" }}>
+            <Box className="ticketlist" sx={{ height: "20vh" }}>
+              <pre>{props.value}</pre>
+            </Box>
+          </AccordionDetails>
+        </Accordion>
+      </AccordionGroup>
+    </Box>
+  );
+};

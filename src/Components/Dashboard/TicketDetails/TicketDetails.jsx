@@ -6,8 +6,42 @@ import { center, glass } from "../../../utils/utils";
 import TicketHeading from "./TicketHeading";
 import APIDeploymentDetails from "./APIDeploymentDetails";
 import { FaPlus } from "react-icons/fa";
-import CacheSQL from "./CacheSQL";
-import URLConfiguration from "./URLConfiguration";
+import { CacheSQLandURLConfiguration } from "./APIDeploymentDetailsAccordion";
+
+const SQL = `SELECT TOP 5 Id, Name FROM customerNames ORDER BY NEWID();
+SELECT column FROM table ORDER BY RAND() LIMIT 1;  
+SELECT column FROM table ORDER BY RANDOM() LIMIT 1;  
+SELECT TOP 1 column FROM table ORDER BY NEWID();
+SELECT TOP 5 Id, Name FROM customerNames ORDER BY NEWID();
+SELECT column FROM table ORDER BY RAND() LIMIT 1;  
+SELECT column FROM table ORDER BY RANDOM() LIMIT 1;  
+SELECT TOP 1 column FROM table ORDER BY NEWID();
+SELECT TOP 5 Id, Name FROM customerNames ORDER BY NEWID();
+SELECT column FROM table ORDER BY RAND() LIMIT 1;  
+SELECT column FROM table ORDER BY RANDOM() LIMIT 1;  
+SELECT TOP 1 column FROM table ORDER BY NEWID();`;
+
+const XML = `Path: Router.xml
+<note>
+<to>Tove</to>
+<from>Jani</from>
+<heading>Reminder</heading>
+<body>Don't forget me this weekend!</body>
+</note>
+
+<note>
+<to>Tove</to>
+<from>Jani</from>
+<heading>Reminder</heading>
+<body>Don't forget me this weekend!</body>
+</note>
+
+<note>
+<to>Tove</to>
+<from>Jani</from>
+<heading>Reminder</heading>
+<body>Don't forget me this weekend!</body>
+</note>`;
 
 const TicketDetails = () => {
   return (
@@ -34,8 +68,8 @@ const TicketDetails = () => {
       >
         <TicketHeading />
         <APIDeploymentDetails />
-        <CacheSQL />
-        <URLConfiguration />
+        <CacheSQLandURLConfiguration title={"Cache SQL"} value={SQL} />
+        <CacheSQLandURLConfiguration title={"URL Configuration"} value={XML} />
       </Box>
 
       <Box

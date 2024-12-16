@@ -9,7 +9,7 @@ import {
 import React from "react";
 import { center, glass, rowStyle } from "../../../utils/utils";
 import APIDeploymentDetailsRow from "./APIDeploymentDetailsRow";
-import APIDeploymentDetailsAccordion from "./APIDeploymentDetailsAccordion";
+import { APIDeploymentDetailsAccordion } from "./APIDeploymentDetailsAccordion";
 
 const APIDeploymentDetails = () => {
   return (
