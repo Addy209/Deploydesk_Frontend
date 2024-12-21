@@ -5,6 +5,7 @@ import {
   FETCH_DATA_SUCCESS,
   SAVE_USER,
   SAVE_ERROR_USER,
+  CLEAR_LOGIN_ERROR,
 } from "../types";
 import { getFullURL } from "../../utils/URLs";
 
@@ -31,4 +32,8 @@ export const LoginUser = (username, password) => async (dispatch) => {
   } catch (error) {
     dispatch({ type: SAVE_ERROR_USER, error });
   }
+};
+
+export const ClearError = () => async (dispatch) => {
+  dispatch({ type: CLEAR_LOGIN_ERROR });
 };

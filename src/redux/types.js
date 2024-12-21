@@ -4,3 +4,4 @@ export const FETCH_DATA_FAILURE = "FETCH_DATA_FAILURE";
 
 export const SAVE_USER = "SAVE_USER";
 export const SAVE_ERROR_USER = "SAVE_ERROR_USER";
+export const CLEAR_LOGIN_ERROR = "CLEAR_LOGIN_ERROR";

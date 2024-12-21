@@ -3,7 +3,7 @@ import { Box, Button, Divider, Input, Link, Typography } from "@mui/joy";
 import { IoLogInSharp } from "react-icons/io5";
 import { glass } from "../../utils/utils";
 import { useDispatch, useSelector } from "react-redux";
-import { LoginUser } from "../../redux/action";
+import { ClearError, LoginUser } from "../../redux/action";
 import { useNavigate } from "react-router";
 
 const Login = () => {
@@ -22,6 +22,7 @@ const Login = () => {
   }
   if (error) {
     alert(error);
+    dispatch(ClearError());
   }
   return (
     <>

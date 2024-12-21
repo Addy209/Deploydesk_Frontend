@@ -8,6 +8,7 @@ import SideMenu from "../../Components/Dashboard/SideMenu";
 import "../../Components/Dashboard/dashboard.css";
 import TicketList from "../../Components/Dashboard/TicketList";
 import TicketDetails from "../../Components/Dashboard/TicketDetails/TicketDetails";
+import CreateRequestBtn from "../../Components/Dashboard/TicketDetails/CreateRequestBtn";
 
 const Dashboard = () => {
   return (
@@ -34,6 +35,7 @@ const Dashboard = () => {
         <SideMenu />
         <TicketList />
         <TicketDetails />
+        <CreateRequestBtn />
       </Box>
     </Box>
   );

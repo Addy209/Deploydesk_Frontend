@@ -15,6 +15,40 @@ import { MdCheck, MdOutlineClose } from "react-icons/md";
 
 const dataList = [0, 0, 0, 0];
 const isApprover = true;
+const SQL = `SELECT TOP 5 Id, Name FROM customerNames ORDER BY NEWID();
+SELECT column FROM table ORDER BY RAND() LIMIT 1;  
+SELECT column FROM table ORDER BY RANDOM() LIMIT 1;  
+SELECT TOP 1 column FROM table ORDER BY NEWID();
+SELECT TOP 5 Id, Name FROM customerNames ORDER BY NEWID();
+SELECT column FROM table ORDER BY RAND() LIMIT 1;  
+SELECT column FROM table ORDER BY RANDOM() LIMIT 1;  
+SELECT TOP 1 column FROM table ORDER BY NEWID();
+SELECT TOP 5 Id, Name FROM customerNames ORDER BY NEWID();
+SELECT column FROM table ORDER BY RAND() LIMIT 1;  
+SELECT column FROM table ORDER BY RANDOM() LIMIT 1;  
+SELECT TOP 1 column FROM table ORDER BY NEWID();`;
+
+const XML = `Path: Router.xml
+<note>
+<to>Tove</to>
+<from>Jani</from>
+<heading>Reminder</heading>
+<body>Don't forget me this weekend!</body>
+</note>
+
+<note>
+<to>Tove</to>
+<from>Jani</from>
+<heading>Reminder</heading>
+<body>Don't forget me this weekend!</body>
+</note>
+
+<note>
+<to>Tove</to>
+<from>Jani</from>
+<heading>Reminder</heading>
+<body>Don't forget me this weekend!</body>
+</note>`;
 
 const style = {
   ...center,
@@ -27,7 +61,7 @@ export const APIDeploymentDetailsAccordion = () => {
     <>
       {dataList.map((val, index) => {
         return (
-          <Accordion key={index}>
+          <Accordion key={index} defaultExpanded={index === 0 ? true : false}>
             <AccordionSummary>
               <Box sx={{ ...style }}>
                 {index + 1}. thirdPartyGenericService_expDS{" "}
@@ -70,6 +104,17 @@ export const APIDeploymentDetailsAccordion = () => {
                 title2="Broker/EG"
                 desc2="PaymentExp/PaymentExp_02"
               />
+
+              <CacheSQLandURLConfiguration
+                title={"Cache SQL:"}
+                value={SQL}
+                fSize="13px"
+              />
+              <CacheSQLandURLConfiguration
+                title={"URL Configuration:"}
+                value={XML}
+                fSize="13px"
+              />
             </AccordionDetails>
           </Accordion>
         );
@@ -80,51 +125,30 @@ export const APIDeploymentDetailsAccordion = () => {
 
 export const CacheSQLandURLConfiguration = (props) => {
   return (
-    <Box
-      sx={{
-        ...center,
-        justifyContent: "flex-start",
-        alignItems: "flex-start",
-        margin: "1rem 0 0 1vw",
-        width: "100%",
-      }}
-    >
-      <AccordionGroup
-        color="neutral"
-        size="md"
-        sx={{ ...glass, width: "98%", marginRight: "10vw" }}
+    <>
+      {" "}
+      <Box
+        sx={{
+          width: "100%",
+          paddingTop: "1vh",
+        }}
       >
-        <Accordion>
-          <AccordionSummary>
-            <Box sx={{ ...style }}>
-              {props.title}
-              <Box
-                onClick={(e) => {
-                  e.stopPropagation();
-                }}
-              >
-                {isApprover ? (
-                  <ButtonGroup>
-                    <IconButton color="success" variant="solid" size="sm">
-                      <MdCheck />
-                    </IconButton>
-                    <IconButton color="danger" variant="solid" size="sm">
-                      <MdOutlineClose />
-                    </IconButton>
-                  </ButtonGroup>
-                ) : (
-                  ""
-                )}
-              </Box>
-            </Box>
-          </AccordionSummary>
-          <AccordionDetails sx={{ backgroundColor: "rgb(211,211,211)" }}>
-            <Box className="ticketlist" sx={{ height: "20vh" }}>
-              <pre>{props.value}</pre>
-            </Box>
-          </AccordionDetails>
-        </Accordion>
-      </AccordionGroup>
-    </Box>
+        <Typography level="title-sm">{props.title}</Typography>
+        <Box
+          sx={{
+            border: "1px solid rgba(255,255,255,0.6)",
+            padding: "0.5rem 1rem",
+            margin: "0.5rem 0 0 0",
+          }}
+        >
+          <Box
+            className="ticketlist"
+            sx={{ height: "25vh", fontSize: props.fSize }}
+          >
+            <pre>{props.value}</pre>
+          </Box>
+        </Box>
+      </Box>
+    </>
   );
 };

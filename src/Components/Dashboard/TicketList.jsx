@@ -45,7 +45,7 @@ const TicketList = () => {
           const condititon = selected === index;
           const style = {
             color: condititon ? "whitesmoke" : "",
-            transition: "ease-in-out 0.5s",
+            transition: "ease-in-out 0.1s",
           };
           return (
             <Box key={index}>
@@ -62,7 +62,7 @@ const TicketList = () => {
                   width: "100%",
                   cursor: "pointer",
                   backgroundColor: condititon ? "rgba(13, 110, 253,0.6)" : "",
-                  transition: "ease-in-out 0.5s",
+                  transition: "ease-in-out 0.1s",
                 }}
               >
                 <Box
